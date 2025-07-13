@@ -1,195 +1,307 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-:root {
-    --modal-duration: 1s;
-    --primary-color: #227093;
-    --secondary-color: #d1ccc0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
 
 * {
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    transition: transform 0.5s ease;
+    background-color: black;
 }
 
-body.show-nav {
-    transform: translate(200px);
+.main {
+    background-image: url("assets/images/bg.jpg");
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+    background-repeat: no-repeat;
+    height: 644px;
+    position: relative;
+}
+
+.main .box {
+    height: 644px;
+    width: 100%;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+    background-color: black;
 }
 
 nav {
-    background-color: var(--primary-color);
-    border-right: 2px solid rgba(200,200,200,0.1);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    z-index: 100;
-    transform: translateX(-100%);
+    max-width: 60vw;
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
 
-nav .logo {
-    padding: 30px 0;
-    text-align: center;
-}
-
-nav .logo img {
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-}
-
-nav ul {
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-}
-
-nav ul li {
-    border-bottom: 2px solid rgba(200,200,200,0.1);
-    padding: 20px;
-}
-
-nav ul li:first-of-type {
-    border-top: 2px solid rgba(200,200,200,0.1);
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-header {
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 150%;
+nav img {
+    color: red;
+    width: 130px;
     position: relative;
-    padding: 40px 15px;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+
+.hero {
+    font-family: 'Martel Sans', sans-serif;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+}
+
+.hero> :nth-child(1) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+.hero> :nth-child(2) {
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
 }
 
-header p {
-    margin: 30px 0;
+.hero> :nth-child(3) {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
 }
 
-button {
-    background-color: var(--secondary-color);
-    border: 0;
-    border-radius: 5px;
-    color: black;
+.separation {
+    height: 7px;
+    background-color: rgb(46, 44, 44);
+    position: relative;
+    z-index: 20;
+}
+
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(248, 243, 243, 0.021);
+    border-radius: 4px;
+    border: 1px solid white;
     cursor: pointer;
-    padding: 8px 10px;
+
 }
 
-button:focus {
-    outline: none;
-}
-
-.toggle {
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
+.btn-red {
+    background-color: red;
     color: white;
-    top: 20px;
-    left: 20px;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
 }
 
-.cta-btn {
-    padding: 10px 30px;
-    font-size: 24px;
+.btn-red-sm {
+    background-color: red;
+    color: white;
 }
 
-.container {
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 800px;
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
 
-.modal-container {
-    background-color: rgba(0,0,0,0.6);
-    position: fixed;
-    top: 0;
+.main input {
+    padding: 7px 101px 8px 14px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.secImg {
+    position: relative;
+}
+
+.secImg img {
+    width: 555px;
+    position: relative;
+    z-index: 10;
+}
+
+.secImg video {
+    position: absolute;
+    top: 51px;
     right: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
+    width: 555px;
 }
 
-.modal-container.show-modal {
-    display: block;
+section.first>div {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 0;
 }
 
-.modal {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    width: 400px;
-    animation-name: modalopen;
-    animation-duration: var(--modal-duration);
+section.first>div :nth-child(1) {
+    font-size: 48px;
+    font-weight: bolder;
 }
 
-.modal-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-}
 
-.modal-header h3 {
-    margin: 0;
-    /* border-bottom: 1px solid var(--secondary-color); */
-}
-
-.modal-content {
-    padding: 20px;
-}
-
-.modal-form div {
-    margin: 15px 0;
-}
-
-.modal-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.modal-form input {
-    padding: 10px;
-    width: 100%;
-}
-
-.close-btn {
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
+section.first>div :nth-child(2) {
     font-size: 24px;
+
+}
+
+
+.faq h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
+.faq {
+    background: black;
+    color: white;
+    padding: 34px;
+}
+
+.faqbox:hover {
+    background-color: #414141;
     color: white;
 }
 
-@keyframes modalopen {
-    from {
-        opacity: 0;
+.faqbox svg {
+    filter: invert(1);
+}
+
+.faqbox {
+    transition: all 1s ease-out;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    padding: 24px;
+    max-width: 60vw;
+    margin: 34px auto;
+    cursor: pointer;
+}
+
+footer {
+    color: white;
+    max-width: 60vw;
+    margin: auto;
+    padding: 60px;
+}
+
+footer .questions {
+    padding: 34px 0;
+}
+
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: white;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+
+    nav{
+        max-width: 90vw;
     }
-    to {
-        opacity: 1;
+
+    .first {
+        flex-wrap: wrap;
     }
+
+    .secImg img {
+        width: 305px;
+    }
+
+    .secImg video {
+        width: 305px;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 32px;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 18px;
+    }
+
+    .hero> :nth-child(3) {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .faq h2 {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    footer {
+        max-width: 90vw;
+        padding: 75px 0;
+    }
+
+    .footer-item{
+        align-items: center;
+    }
+ 
+
+}
+
+
+
+@media screen and (max-width: 1300px) {
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+
+.footer a {
+    font-size: 14px;
+    color: white;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
 }
